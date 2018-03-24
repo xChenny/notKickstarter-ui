@@ -1,0 +1,27 @@
+/* .App {
+  text-align: center;
+} */
+
+/* .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3em 3em;
+} */
+
+.box:not(:last-child) {
+	margin-bottom: 0;
+}
+
+.flexy-boi {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.campaign {
+  position: relative;
+}
