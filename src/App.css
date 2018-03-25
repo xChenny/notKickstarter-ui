@@ -25,3 +25,12 @@
 .campaign {
   position: relative;
 }
+
+.tab-icon {
+  margin-right: 0.5em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

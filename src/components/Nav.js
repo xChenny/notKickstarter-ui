@@ -12,23 +12,17 @@ class Nav extends Component {
 
   componentDidMount() {
     const path = this.props.location.pathname
-    switch(path) {
-      case "/campaigns":
-        this.setState({loc: 'browse'})
-        break
-      case "/account":
-        this.setState({loc: 'account'})
-        break
-      default:
-        return
-    }
+    if (path.includes('campaign'))
+      this.setState({loc: 'browse'})
+    if (path.includes('account'))
+      this.setState({loc: 'account'})
   }
 
   onClick(e) {
     e.preventDefault()
     const html = e.target.innerHTML
     switch(html) {
-      case "Browse Campaigns":
+      case "Campaigns":
         this.setState({loc: 'browse'})
         break
       case "Account":
@@ -43,7 +37,7 @@ class Nav extends Component {
     return (
       <div className="tabs is-left is-boxed">
         <ul>
-          <li className={(this.state.loc === 'browse') ? "is-active" : ""} onClick={e => this.onClick(e)}><Link to='/campaigns'>Browse Campaigns</Link></li>
+          <li className={(this.state.loc === 'browse') ? "is-active" : ""} onClick={e => this.onClick(e)}><Link to='/campaigns'>Campaigns</Link></li>
           <li className={(this.state.loc === 'account') ? "is-active" : ""} onClick={e => this.onClick(e)}><Link to='/account'>Account</Link></li>
         </ul>
       </div>
